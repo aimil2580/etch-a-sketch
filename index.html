@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETCH A SKETCH</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <!-- <style>
+        html {
+            color-scheme: light dark;
+            background-image: url(https://i.redditmedia.com/AUXwGcVgSh0v6POuTDYvWH1kEzBQvK1EWb777KbSp4w.jpg?s=7417d7fcca26778f6d2b0f43196cc18e);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /*         background-position: bottom center; */
+            --border-color: #000000 max-width: 100%;
+            /* max-height: ; */
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+        }
+
+        #main {
+            display: grid;
+            outline: solid green 1px;
+            background-color: rgb(15, 33, 10);
+            backdrop-filter: blur(10px);
+            max-width: 30em;
+            min-width: 20em;
+            aspect-ratio: 1/1;
+        }
+
+        .box {
+            aspect-ratio: 1/1;
+        }
+
+        .colorbox {
+            outline: 1px solid var(--border-color);
+        }
+
+        .needToFleeex {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .btnpos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            /* justify-items: center; */
+            background-color: rgba(111, 111, 111, 0.518);
+            backdrop-filter: blur(7px);
+            padding: 0.4em;
+            text-wrap: wrap;
+            border-radius: 15px;
+
+            * {
+                /* background-color: rgba(104, 104, 104, 0.779); */
+                border: none;
+                border-radius: 5px;
+                /* padding: 3px; */
+            }
+
+            div {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            button {
+                background: rgb(86, 86, 86);
+                color: inherit;
+                border: none;
+                padding: 2px;
+                font: inherit;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        .labelForSize {
+            display: inline;
+        }
+
+        .forlabelplacemnt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+
+            label {
+                background-color: rgba(42, 50, 103, 0.8);
+                padding: 0.3em;
+                border-radius: 7px;
+            }
+        }
+
+        .bigbox {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2em;
+        }
+
+        .history {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(111, 111, 111, 0.518);
+            backdrop-filter: blur(7px);
+            border-radius: 15px;
+            padding: 0.4em;
+
+        }
+
+        .colorHistory {
+            min-height: 2em;
+            max-height: 7em;
+            overflow-y: auto;
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1>this is an etch a sketch</h1>
+    <div class="needToFleeex">
+        <div class="forlabelplacemnt">
+            <div id="main"></div>
+            <label for="main" class="labelForMain"></label>
+        </div>
+        <div class="btnpos">
+            <div>
+                <button class="btn">color: black</button>
+                <button class="btn2">Eraser</button>
+                <button class="ersall">Erase all</button>
+                <button class="rainbow">Rainbow color</button>
+            </div>
+            <div>Choose you colour here =><input class="chooseColor" type="color"></div>
+            <div>Choose you colour to fill all canvas here =><input class="chooseFillColor" type="color"></div>
+            <div class="bigbox">Choose the size of the board =><input class="sizeSlider" type="range" min="4" max="64"
+                    value="16">
+                <label class="labelForSize"></label>
+                <button class="apply">Apply new size for canvas</button>
+            </div>
+            <div>
+                <button class="borderbtn">Toggle grid lines and their colour</button> =>
+                <input type="color" class="bordercolor">
+            </div>
+        </div>
+        <div class="history">
+            <h2>Color history</h2>
+            <ol class="colorHistory">
+
+            </ol>
+            <button class="clearHistory">Clear</button>
+        </div>
+    </div>
+</body>
+
+</html>
