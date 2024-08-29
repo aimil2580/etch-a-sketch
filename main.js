@@ -97,9 +97,12 @@ const randomColor = () => {
 // })
 
 
+
+//need to recheck code untile line 118
 const borderbtn = document.querySelector(".borderbtn")
 borderbtn.addEventListener("click", () => {
     gridded = !gridded
+    // document.documentElement.setAttribute("style", `--border-color: ${borderColorPicker.value}`)
     const boxes = document.querySelectorAll(".box")
     for (let i = 0; i != boxes.length; i++) {
         let box = boxes[i]
@@ -139,19 +142,25 @@ sizeSlider.addEventListener("input", () => {
     labelForSize.textContent = `You select ${sizeSlider.value} x ${sizeSlider.value}`
 })
 
-
+let allColors = [];
 let lastCol;
 const colorHistory = document.querySelector(".colorHistory")
 const chooseColor = document.querySelector(".chooseColor")
 main.addEventListener("click", () => {
-    if (lastCol != chooseColor.value) {
+    if (allColors.includes(`${chooseColor.value}`) === false) {
+        allColors.push(`${chooseColor.value}`)
         const colors = document.createElement("li")
         colors.innerHTML = chooseColor.value
         colorHistory.appendChild(colors)
-        lastCol = chooseColor.value
         colors.style.color = `${chooseColor.value}`
         colors.style.fontWeight = 700;
     }
+
+    if (lastCol != chooseColor.value) {
+        lastCol = chooseColor.value
+        allColors.push(`${chooseColor.value}`)
+    }
+
 })
 
 // main.addEventListener("")
@@ -159,6 +168,8 @@ main.addEventListener("click", () => {
 const clearHistory = document.querySelector(".clearHistory")
 clearHistory.addEventListener("click", () => {
     colorHistory.innerHTML = ""
+    lastCol = ""
+    allColors = []
 })
 
 const applyBtn = document.querySelector(".apply")
@@ -171,7 +182,7 @@ applyBtn.addEventListener("click", () => {
     }
     main.style.gridTemplateColumns = `repeat(${sizeSlider.value}, 1fr)`
     labelForSize.textContent = `You have selected ${sizeSlider.value} x ${sizeSlider.value}`
-    lableForMain.textContent = `current size is ${sizeSlider.value} x ${sizeSlider.value}`
+    lableForMain.textContent = `Current size is ${sizeSlider.value} x ${sizeSlider.value}`
 
     const boxes = document.querySelectorAll(".box")
     for (let i = 0; i != boxes.length; i++) {
@@ -186,6 +197,10 @@ applyBtn.addEventListener("click", () => {
 //need to make all comment fix
 //neeed to fix titles
 
+const colorsFix = () => {
+    borderColorPicker.value = chooseFillColor.value = chooseColor.value = "#000000"
+}
+window.onload = colorsFix
 
 gridCreator(sizeSlider.value)
 boxAdder(0, sizeSlider.value)
