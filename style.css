@@ -21,6 +21,14 @@ html {
             min-width:35em;
             aspect-ratio: 1/1;
         }
+
+        h1{
+            font-family: sans-serif;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            color: rgb(51, 77, 51);
+        }
         
         .forlabelplacemnt {
             display: flex;
