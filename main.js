@@ -206,3 +206,4 @@ gridCreator(sizeSlider.value)
 boxAdder(0, sizeSlider.value)
 labelForSize.textContent = `current size is ${sizeSlider.value} x ${sizeSlider.value}`
 lableForMain.textContent = `current size is ${sizeSlider.value} x ${sizeSlider.value}`
+//hellooo
