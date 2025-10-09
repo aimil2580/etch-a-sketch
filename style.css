@@ -1,6 +1,6 @@
 html {
             color-scheme: light dark;
-            background-image: url(https://i.redditmedia.com/AUXwGcVgSh0v6POuTDYvWH1kEzBQvK1EWb777KbSp4w.jpg?s=7417d7fcca26778f6d2b0f43196cc18e);
+            background-image: url(/img/a_cartoon_of_a_house_on_a_cliff.png);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -64,7 +64,7 @@ html {
             grid-template-columns: 1fr;
             gap: 1em;
             /* justify-items: center; */
-            background-color: rgba(111, 111, 111, 0.288);
+            background-color: rgba(111, 111, 111, 0.5);
             backdrop-filter: blur(7px);
             padding: 0.4em;
             text-wrap: wrap;
